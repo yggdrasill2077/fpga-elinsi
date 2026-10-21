@@ -1,0 +1,14 @@
+﻿v6_edge 工程包  生成于 2026-10-21 22:34
+
+配置: 中值滤波(MEDIAN_ON=1) + 拉普拉斯零交叉(LAPLACE_MODE=1) + 去孤立点 + 分屏 + 红黑配色
+bit: 2,380,296 B @ 2026-10-21 21:44:14
+资源: FF 8,339 / LUT 12,291 / RAM10 120 / DSP 13, 时序无违例
+
+顶层开关:
+  SHARP_BYPASS = 1  (3x3锐化旁路)
+  GRAY_ONLY    = 1  (原始灰度打包成 {g,g,g})
+  MEDIAN_ON    = 1  (中值滤波启用)
+  LAPLACE_MODE = 1  (1=拉普拉斯零交叉, 0=Sobel)
+
+编译: efx_run.bat ti60f225_oob.xml -f compile
+烧录: efx_run.bat ti60f225_oob.xml -f program --pgm_opts mode=jtag
